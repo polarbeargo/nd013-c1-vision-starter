@@ -4,7 +4,7 @@ import os
 import random
 from pathlib import Path
 import numpy as np
-from sklearn.cross_validation import train_test_split
+from sklearn.model_selection import train_test_split
 from utils import get_module_logger
 
 
