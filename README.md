@@ -81,7 +81,10 @@ Use the following command to run the script once your function is implemented:
 ```
 python create_splits.py --data-dir /home/workspace/data
 ```
-
+In the Udacity workspace:
+```
+python create_splits.py --source /home/workspace/data/waymo/training_and_validation/ --destination /home/workspace/data/waymo/
+```
 ### Edit the config file
 
 Now you are ready for training. As we explain during the course, the Tf Object Detection API relies on **config files**. The config that we will use for this project is `pipeline.config`, which is the config for a SSD Resnet 50 640x640 model. You can learn more about the Single Shot Detector [here](https://arxiv.org/pdf/1512.02325.pdf).
@@ -144,8 +147,19 @@ python inference_video.py --labelmap_path label_map.pbtxt --model_path experimen
 This section should contain a brief description of the project and what we are trying to achieve. Why is object detection such an important component of self driving car systems?
 
 ### Set up
-This section should contain a brief description of the steps to follow to run the code for this repository.
-
+This section should contain a brief description of the steps to follow to run the code for this repository.  
+#### In the Udacity workspace:  
+- Run notebook  
+```
+cd /home/workspace
+sudo apt-get update
+sudo apt-get install firefox (Prevent firefox crash)
+./launch_jupyter.sh
+```
+- Run create_splits.py  
+```
+python create_splits.py --source /home/workspace/data/waymo/training_and_validation/ --destination /home/workspace/data/waymo/
+```
 ### Dataset
 #### Dataset analysis
 This section should contain a quantitative and qualitative description of the dataset. It should include images, charts and other visualizations.
