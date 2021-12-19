@@ -18,20 +18,20 @@ def split(source, destination):
         - destination [str]: destination data directory, contains 3 sub folders: train / val / test
     """
     tfrecords = glob.glob(os.path.join(source, "*.tfrecord"))
-    train_files, val_files = train_test_split(tfrecords, test_size=0.4)
-#     val_files, test_files= train_test_split(val_test_files, test_size=0.5)
+    train_files, val_test_files = train_test_split(tfrecords, test_size=0.4)
+    val_files, test_files= train_test_split(val_test_files, test_size=0.5)
     train = os.makedirs(os.path.join(destination, 'train'), exist_ok=True)
     val = os.makedirs(os.path.join(destination, 'val'), exist_ok=True)
-#     test = os.mkdir(os.path.join(source, 'test'), exist_ok=True)
+    test = os.makedirs(os.path.join(source, 'test'), exist_ok=True)
 
-    dirs = [train, val]
-    files = [train_files, val_files]
+    dirs = [train, val, test]
+    files = [train_files, val_files, test_files]
 
-    for dir, file in zip(dirs, files):
+    for dir, fs in zip(dirs, files):
         print(f"Moving files to {dir}.")
-        for file in files:
+        for file in fs:
             Path(file).rename(os.path.join(dir, Path(file).name))
-        print(f"Loaded {len(files)} files.")
+        print(f"Loaded {len(fs)} files.")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Split data into training / validation / testing')
