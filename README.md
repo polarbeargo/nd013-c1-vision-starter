@@ -159,6 +159,10 @@ sudo apt-get install firefox (Prevent firefox crash)
 - Run create_splits.py  
 ```
 python create_splits.py --source /home/workspace/data/waymo/training_and_validation/ --destination /home/workspace/data/waymo/
+```  
+- Run edit_config.py  
+```
+python edit_config.py --train_dir /home/workspace/data/waymo/train/ --eval_dir /home/workspace/data/waymo/val/ --batch_size 4 --checkpoint ./training/pretrained-models/ssd_resnet50_v1_fpn_640x640_coco17_tpu-8/checkpoint/ckpt-0 --label_map label_map.pbtxt
 ```
 ### Dataset
 #### Dataset analysis
