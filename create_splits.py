@@ -15,7 +15,7 @@ def split(source, destination):
     same directory. This folder should be named train, val and test.
 
     args:
-        - source [str]: source data directory, contains the processed tf records:         /home/workspace/data/waymo/training_and_validation/
+        - source [str]: source data directory, contains the processed tf records: /home/workspace/data/waymo/training_and_validation/
         - destination [str]: destination data directory, contains 3 sub folders: train / val / test
     """
     tfrecords = glob.glob(os.path.join(source, "*.tfrecord"))
