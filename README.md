@@ -164,17 +164,6 @@ python create_splits.py --source /home/workspace/data/waymo/training_and_validat
 ```
 python edit_config.py --train_dir /home/workspace/data/waymo/train/ --eval_dir /home/workspace/data/waymo/val/ --batch_size 4 --checkpoint ./training/pretrained-models/ssd_resnet50_v1_fpn_640x640_coco17_tpu-8/checkpoint/ckpt-0 --label_map label_map.pbtxt
 ```
-
-### Dataset
-#### Dataset analysis
-This section should contain a quantitative and qualitative description of the dataset. It should include images, charts and other visualizations.
-#### Cross validation
-This section should detail the cross validation strategy and justify your approach.
-
-### Training
-#### Reference experiment
-This section should detail the results of the reference experiment. It should includes training metrics and a detailed explanation of the algorithm's performances.
-
 - Training
 ```
 python experiments/model_main_tf2.py --model_dir=training/reference/ --pipeline_config_path=training/reference/pipeline_new.config 
@@ -206,5 +195,23 @@ Required-by: tf-models-official
 cd /data/virtual_envs/sdc-c1-gpu-augment/lib/python3.7/site-packages/tensorboard
 python main.py --logdir=/home/workspace/training/reference
 ```
+- Export the trained model
+```
+python experiments/exporter_main_v2.py --input_type image_tensor --pipeline_config_path training/reference/pipeline_new.config --trained_checkpoint_dir training/reference --output_directory training/experiment0/exported_model/
+```
+- Create a video of model's inferences for tf record file
+```
+python inference_video.py --labelmap_path label_map.pbtxt --model_path training/experiment0/exported_model/saved_model --tf_record_path /home/workspace/data/waymo/test/segment-12200383401366682847_2552_140_2572_140_with_camera_labels.tfrecord --config_path training/reference/pipeline_new.config --output_path animation.gif
+```  
+### Dataset
+#### Dataset analysis
+This section should contain a quantitative and qualitative description of the dataset. It should include images, charts and other visualizations.
+#### Cross validation
+This section should detail the cross validation strategy and justify your approach.
+
+### Training
+#### Reference experiment
+This section should detail the results of the reference experiment. It should includes training metrics and a detailed explanation of the algorithm's performances.
+
 #### Improve on the reference
 This section should highlight the different strategies you adopted to improve your model. It should contain relevant figures and details of your findings.
