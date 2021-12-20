@@ -1,5 +1,19 @@
 # Object Detection in an Urban Environment
 
+[image1]: ./images/1.png
+[image2]: ./images/2.png
+[image3]: ./images/3.png
+[image4]: ./images/4.png
+[image5]: ./images/5.png
+[image6]: ./images/6.png
+[image7]: ./images/7.png
+[image8]: ./images/8.png
+[image9]: ./images/barplot.png
+[image10]: ./images/cyclist.png
+[image11]: ./images/pedestrian.png
+[image12]: ./images/vehicle.png
+[image13]: ./images/step2500.gif
+  
 ## Data
 
 For this project, we will be using data from the [Waymo Open dataset](https://waymo.com/open/).
@@ -205,13 +219,25 @@ python inference_video.py --labelmap_path label_map.pbtxt --model_path training/
 ```  
 ### Dataset
 #### Dataset analysis
-This section should contain a quantitative and qualitative description of the dataset. It should include images, charts and other visualizations.
+This section should contain a quantitative and qualitative description of the dataset. It should include images, charts and other visualizations.   
+
+![][image9]       
+![][image12]       
+![][image11]      
+![][image10]  
+
+| Display 5 images         |  Display 5 images        |
+:-------------------------:|:-------------------------:
+![][image1]   |  ![][image2] 
+![][image3]   |  ![][image4] 
+![][image5]   |  ![][image6]  
+![][image7]   |  ![][image8] 
 #### Cross validation
 This section should detail the cross validation strategy and justify your approach.
 
 ### Training
 #### Reference experiment
-This section should detail the results of the reference experiment. It should includes training metrics and a detailed explanation of the algorithm's performances.
-
+This section should detail the results of the reference experiment. It should includes training metrics and a detailed explanation of the algorithm's performances. 
+![][image13]  
 #### Improve on the reference
 This section should highlight the different strategies you adopted to improve your model. It should contain relevant figures and details of your findings.
