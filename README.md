@@ -221,17 +221,21 @@ python inference_video.py --labelmap_path label_map.pbtxt --model_path training/
 #### Dataset analysis
 This section should contain a quantitative and qualitative description of the dataset. It should include images, charts and other visualizations.   
 
-![][image9]       
-![][image12]       
-![][image11]      
-![][image10]  
-
 | Display 5 images         |  Display 5 images        |
 :-------------------------:|:-------------------------:
 ![][image1]   |  ![][image2] 
 ![][image3]   |  ![][image4] 
 ![][image5]   |  ![][image6]  
-![][image7]   |  ![][image8] 
+![][image7]   |  ![][image8]   
+
+![][image9]    
+- vehicle 
+![][image12] 
+- pedestrian
+![][image11]  
+- cyclist
+![][image10]  
+
 #### Cross validation
 This section should detail the cross validation strategy and justify your approach.
 
