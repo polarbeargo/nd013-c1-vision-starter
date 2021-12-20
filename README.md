@@ -164,6 +164,7 @@ python create_splits.py --source /home/workspace/data/waymo/training_and_validat
 ```
 python edit_config.py --train_dir /home/workspace/data/waymo/train/ --eval_dir /home/workspace/data/waymo/val/ --batch_size 4 --checkpoint ./training/pretrained-models/ssd_resnet50_v1_fpn_640x640_coco17_tpu-8/checkpoint/ckpt-0 --label_map label_map.pbtxt
 ```
+
 ### Dataset
 #### Dataset analysis
 This section should contain a quantitative and qualitative description of the dataset. It should include images, charts and other visualizations.
@@ -174,5 +175,36 @@ This section should detail the cross validation strategy and justify your approa
 #### Reference experiment
 This section should detail the results of the reference experiment. It should includes training metrics and a detailed explanation of the algorithm's performances.
 
+- Training
+```
+python experiments/model_main_tf2.py --model_dir=training/reference/ --pipeline_config_path=training/reference/pipeline_new.config 
+```
+- Evaluation
+```
+python experiments/model_main_tf2.py --model_dir=training/reference/ --pipeline_config_path=training/reference/pipeline_new.config --checkpoint_dir=training/reference/
+```
+
+- Watching Tensorboard
+```
+pip show tensorflow
+```
+```
+WARNING: pip is being invoked by an old script wrapper. This will fail in a future version of pip.
+Please see https://github.com/pypa/pip/issues/5599 for advice on fixing the underlying issue.
+To avoid this problem you can invoke Python with '-m pip' instead of running pip directly.
+Name: tensorflow
+Version: 2.4.1
+Summary: TensorFlow is an open source machine learning framework for everyone.
+Home-page: https://www.tensorflow.org/
+Author: Google Inc.
+Author-email: packages@tensorflow.org
+License: Apache 2.0Location: /data/virtual_envs/sdc-c1-gpu-augment/lib/python3.7/site-packages
+Requires: tensorboard, keras-preprocessing, astunparse, protobuf, six, gast, wrapt, termcolor, typing-extensions, grpcio, absl-py, numpy, tensorflow-estimator, wheel, h5py, flatbuffers, google-pasta, opt-einsum
+Required-by: tf-models-official
+```
+```
+cd /data/virtual_envs/sdc-c1-gpu-augment/lib/python3.7/site-packages/tensorboard
+python main.py --logdir=/home/workspace/training/reference
+```
 #### Improve on the reference
 This section should highlight the different strategies you adopted to improve your model. It should contain relevant figures and details of your findings.
