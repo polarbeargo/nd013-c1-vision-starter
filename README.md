@@ -13,6 +13,12 @@
 [image11]: ./images/pedestrian.png
 [image12]: ./images/vehicle.png
 [image13]: ./images/step2500.gif
+[image14]: ./images/loss.png
+[image15]: ./images/trainingloss.png
+[image16]: ./images/detection_box_precision.png
+[image17]: ./images/detectionbox_recall.png
+[image18]: ./images/learningRate.png
+[image19]: ./images/eval.png
   
 ## Data
 
@@ -221,23 +227,33 @@ python inference_video.py --labelmap_path label_map.pbtxt --model_path training/
 #### Dataset analysis
 This section should contain a quantitative and qualitative description of the dataset. It should include images, charts and other visualizations.   
 
-![][image9]       
-![][image12]       
-![][image11]      
-![][image10]  
-
 | Display 5 images         |  Display 5 images        |
 :-------------------------:|:-------------------------:
 ![][image1]   |  ![][image2] 
 ![][image3]   |  ![][image4] 
 ![][image5]   |  ![][image6]  
-![][image7]   |  ![][image8] 
+![][image7]   |  ![][image8]   
+
+![][image9]    
+- vehicle 
+![][image12] 
+- pedestrian
+![][image11]  
+- cyclist
+![][image10]  
+
 #### Cross validation
 This section should detail the cross validation strategy and justify your approach.
 
 ### Training
 #### Reference experiment
 This section should detail the results of the reference experiment. It should includes training metrics and a detailed explanation of the algorithm's performances. 
+![][image14] 
+![][image15] 
+![][image16] 
+![][image17] 
+![][image18] 
+![][image19] 
 ![][image13]  
 #### Improve on the reference
 This section should highlight the different strategies you adopted to improve your model. It should contain relevant figures and details of your findings.
