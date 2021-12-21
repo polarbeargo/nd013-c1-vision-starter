@@ -248,16 +248,17 @@ This section should detail the cross validation strategy and justify your approa
 ### Training
 #### Reference experiment
 This section should detail the results of the reference experiment. It should includes training metrics and a detailed explanation of the algorithm's performances. 
-### Loss
+- The batch size is 4 in the SSD Resnet 50 640x640 baseline model, training step up to 3200
+#### Loss
 ![][image14] 
-![][image15] 
-### Precision
+![][image15]  
+#### Precision
 ![][image16] 
-### Recall
+#### Recall
 ![][image17]
-### Learning Rate
+#### Learning Rate
 ![][image18] 
-### Evaluation  
+#### Evaluation  
 ![][image19] 
 
 ![][image13]  
