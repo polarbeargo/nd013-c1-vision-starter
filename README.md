@@ -13,6 +13,12 @@
 [image11]: ./images/pedestrian.png
 [image12]: ./images/vehicle.png
 [image13]: ./images/step2500.gif
+[image14]: ./images/loss.png
+[image15]: ./images/trainingloss.png
+[image16]: ./images/detection_box_precision.png
+[image17]: ./images/detectionbox_recall.png
+[image18]: ./images/learningRate.png
+[image19]: ./images/eval.png
   
 ## Data
 
@@ -242,6 +248,12 @@ This section should detail the cross validation strategy and justify your approa
 ### Training
 #### Reference experiment
 This section should detail the results of the reference experiment. It should includes training metrics and a detailed explanation of the algorithm's performances. 
+![][image14] 
+![][image15] 
+![][image16] 
+![][image17] 
+![][image18] 
+![][image19] 
 ![][image13]  
 #### Improve on the reference
 This section should highlight the different strategies you adopted to improve your model. It should contain relevant figures and details of your findings.
