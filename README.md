@@ -19,6 +19,14 @@
 [image17]: ./images/detectionbox_recall.png
 [image18]: ./images/learningRate.png
 [image19]: ./images/eval.png
+[image20]: ./images/aug1.png
+[image21]: ./images/aug2.png
+[image22]: ./images/aug3.png
+[image23]: ./images/aug4.png
+[image24]: ./images/aug5.png
+[image25]: ./images/aug6.png
+[image26]: ./images/aug7.png
+[image27]: ./images/aug8.png
   
 ## Data
 
@@ -264,3 +272,17 @@ This section should detail the results of the reference experiment. It should in
 ![][image13]  
 #### Improve on the reference
 This section should highlight the different strategies you adopted to improve your model. It should contain relevant figures and details of your findings.
+We use `Explore augmentations.ipynb` tried different data augmentation combinations to optimal for our dataset
+We applied the following Augmentations:
+
+- set grayscale conversion to 0.2 probability
+- brightness adjusted to 0.3
+- contrast values between 0.6 ~ 1.0   
+![][image20]
+![][image21]
+![][image22]
+![][image23]
+![][image24]
+![][image25]
+![][image26]
+![][image27]
