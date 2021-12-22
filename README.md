@@ -272,12 +272,69 @@ This section should detail the results of the reference experiment. It should in
 ![][image13]  
 #### Improve on the reference
 This section should highlight the different strategies you adopted to improve your model. It should contain relevant figures and details of your findings.
-We use `Explore augmentations.ipynb` tried different data augmentation combinations to optimal for our dataset
-We applied the following Augmentations:
+We use `Explore augmentations.ipynb` tried different data augmentation combinations to optimal for our dataset.  
 
-- set grayscale conversion to 0.2 probability
-- brightness adjusted to 0.3
-- contrast values between 0.6 ~ 1.0   
+In this section We applied the following Augmentations from [preprocessor.proto](https://github.com/tensorflow/models/blob/master/research/object_detection/protos/preprocessor.proto)
+such as add a random RGB to gray transform with a probability of 0.2:
+```
+data_augmentation_options {
+    random_rgb_to_gray {
+    probability: 0.2
+    }
+  }
+```
+- Add random_pixel_value_scale and random_image_scale to default value.
+```
+  data_augmentation_options {
+    random_pixel_value_scale {
+    }
+  }
+  data_augmentation_options {
+    random_image_scale {
+    }
+  }
+```
+- Brightness adjusted to 0.3  
+```
+  data_augmentation_options {
+    random_adjust_brightness {
+    max_delta: 0.3
+    }
+  }
+```
+- Add random_adjust_hue, random_adjust_contrast and random_adjust_saturation to default value. 
+```
+ data_augmentation_options {
+   random_adjust_hue {
+   }
+ }
+ data_augmentation_options {
+   random_adjust_contrast {
+   }
+ }
+ data_augmentation_options {
+   random_adjust_saturation {
+   }
+ }
+```
+-  Add a random contrast values between 0.6 ~ 1.0   
+```
+  data_augmentation_options {
+    random_adjust_contrast {
+    min_delta: 0.6
+    max_delta: 1.0
+    }
+  }
+```
+
+- Add random_jpeg_quality with min_jpeg_quality to 80
+```
+data_augmentation_options {
+    random_jpeg_quality {
+      min_jpeg_quality: 80
+    }
+  }
+```
 ![][image20]
 ![][image21]
 ![][image22]
