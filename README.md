@@ -27,6 +27,11 @@
 [image25]: ./images/aug6.png
 [image26]: ./images/aug7.png
 [image27]: ./images/aug8.png
+[image28]: ./images/aug9.png
+[image29]: ./images/aug10.png
+[image30]: ./images/aug11.png
+[image31]: ./images/aug12.png
+  
   
 ## Data
 
@@ -343,3 +348,7 @@ data_augmentation_options {
 ![][image25]
 ![][image26]
 ![][image27]
+![][image28]
+![][image29]
+![][image30]
+![][image31]
