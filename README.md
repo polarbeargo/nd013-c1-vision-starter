@@ -262,6 +262,8 @@ This section should detail the cross validation strategy and justify your approa
 #### Reference experiment
 This section should detail the results of the reference experiment. It should includes training metrics and a detailed explanation of the algorithm's performances. 
 - The batch size is 4 in the SSD Resnet 50 640x640 baseline model, training step up to 3200
+- I'm not able to run train and eval commands at the same time due to Udacity workspace will throw out of memory (OOM) this cause eval only have 1 blue dot(run eval command after training finished). 
+- I also tried set smaller batch size from 4 to 2 still the same problem.
 #### Loss
 ![][image14] 
 ![][image15]  
@@ -273,8 +275,8 @@ This section should detail the results of the reference experiment. It should in
 ![][image18] 
 #### Evaluation  
 ![][image19] 
-
-![][image13]  
+  
+- The default results were poor though the training loose approximate to 1 but the precision mAP was 0.033340 which indicate need some modifications to improve the default baseline model.  
 #### Improve on the reference
 This section should highlight the different strategies you adopted to improve your model. It should contain relevant figures and details of your findings.
 We use `Explore augmentations.ipynb` tried different data augmentation combinations to optimal for our dataset.  
