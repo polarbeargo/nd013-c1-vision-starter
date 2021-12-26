@@ -31,6 +31,11 @@
 [image29]: ./images/aug10.png
 [image30]: ./images/aug11.png
 [image31]: ./images/aug12.png
+[image32]: ./images/aug31.png
+[image33]: ./images/aug32.png
+[image34]: ./images/aug33.png
+[image35]: ./images/aug34.png
+  
   
   
 ## Data
@@ -354,3 +359,27 @@ data_augmentation_options {
 ![][image29]
 ![][image30]
 ![][image31]
+
+- Only adjust random_rgb_to_gray, random_adjust_brightness and contrast  
+```
+  data_augmentation_options {
+    random_rgb_to_gray {
+    probability: 0.2
+    }
+  }
+  data_augmentation_options {
+    random_adjust_brightness {
+    max_delta: 0.3
+    }
+  }
+  data_augmentation_options {
+    random_adjust_contrast {
+    min_delta: 0.6
+    max_delta: 1.0
+    }
+  }
+```  
+![][image32]
+![][image33]
+![][image34]
+![][image35]
