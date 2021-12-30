@@ -266,9 +266,9 @@ This section should detail the cross validation strategy and justify your approa
 ### Training
 #### Reference experiment
 This section should detail the results of the reference experiment. It should includes training metrics and a detailed explanation of the algorithm's performances. 
-- The batch size is 4 in the SSD Resnet 50 640x640 baseline model, training step up to 3200
+- The batch size is 4 in the SSD Resnet 50 640x640 baseline model, training step up to 3200 in the Udacity workspace.
 - I'm not able to run train and eval commands at the same time due to Udacity workspace will throw out of memory (OOM) this cause eval only have 1 blue dot(run eval command after training finished). 
-- I also tried setting a smaller batch size from 4 to 2 still has the same problem.
+- I also tried setting a smaller batch size from 4 to 2 still has the same problem.  (Will update this part after resolve OOM problem in the Udacity workspace  with Udacity support)
 #### Loss
 ![][image14] 
 ![][image15]  
@@ -281,7 +281,7 @@ This section should detail the results of the reference experiment. It should in
 #### Evaluation  
 ![][image19] 
   
-- The default results were poor though the training loose approximate to 1 but the precision mAP was 0.033340 which indicate need some modifications to improve the default baseline model.  
+- The default results were poor though the training loss approximate to 1 but the mean average precision mAP was 0.033340 which indicate need some modifications to improve the default baseline model.  
 #### Improve on the reference
 This section should highlight the different strategies you adopted to improve your model. It should contain relevant figures and details of your findings.
 We use `Explore augmentations.ipynb` tried different data augmentation combinations to optimal for our dataset.  
@@ -382,4 +382,5 @@ data_augmentation_options {
 ![][image32]
 ![][image33]
 ![][image34]
-![][image35]
+![][image35]  
+## Will continue after resolve OOM problem in the Udacity workspace with Udacity support
