@@ -261,14 +261,15 @@ This section should contain a quantitative and qualitative description of the da
 ![][image10]  
 
 #### Cross validation
-This section should detail the cross validation strategy and justify your approach.
+By using 100 tfrecord, we use [sklearn.model_selection.train_test_split¶](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html) shuffle data by default=True to generalize data and create three splits from the processed records into train, val and test to reduce the imbalance class in each sample. Since we only use 100 tfrecords, we split the train data to 60 tfrecords and 20 tfrecords for test and validate dataset to ensure we have enough data for training and enough data for test and validate.
+
 
 ### Training
 #### Reference experiment
 This section should detail the results of the reference experiment. It should includes training metrics and a detailed explanation of the algorithm's performances. 
 - The batch size is 4 in the SSD Resnet 50 640x640 baseline model, training step up to 3200 in the Udacity workspace.
 - I'm not able to run train and eval commands at the same time due to Udacity workspace will throw out of memory (OOM) this cause eval only have 1 blue dot(run eval command after training finished). 
-- I also tried setting a smaller batch size from 4 to 2 still has the same problem.  (Will update this part after resolve OOM problem in the Udacity workspace  with Udacity support)
+- I also tried setting a smaller batch size from 4 to 2 still has the same problem.  
 #### Loss
 ![][image14] 
 ![][image15]  
@@ -383,4 +384,3 @@ data_augmentation_options {
 ![][image33]
 ![][image34]
 ![][image35]  
-## Will continue after resolve OOM problem in the Udacity workspace with Udacity support
